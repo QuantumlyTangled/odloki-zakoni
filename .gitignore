@@ -908,8 +908,7 @@ FodyWeavers.xsd
 
 !frontend/.storybook/**/*
 !frontend/src/**/*
-!frontend/tailwind.config.js
-!frontend/postcss.config.js
+!frontend/*.config.js
 frontend/src/.tsbuildinfo
 
 .next/
