@@ -14,7 +14,8 @@ export enum Grbi {
 	RaceFram = 'race-fram.svg',
 	Ruse = 'ruse.svg',
 	SelnicaObDravi = 'selnica-ob-dravi.svg',
-	Starse = 'starse.svg'
+	Starse = 'starse.svg',
+	SvetaTrojica = 'sveta-trojica.svg'
 }
 
 export const computeGrb = (obcina: Obcine) => {
