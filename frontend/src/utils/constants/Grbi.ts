@@ -16,7 +16,8 @@ export enum Grbi {
 	SelnicaObDravi = 'selnica-ob-dravi.svg',
 	Starse = 'starse.svg',
 	SvetaTrojica = 'sveta-trojica.svg',
-	SvetaAna = 'sveta-ana.svg'
+	SvetaAna = 'sveta-ana.svg',
+	SvetiJurijVSlovenskihGoricah = 'sveti-jurij-v-slovenskih-goricah.svg'
 }
 
 export const computeGrb = (obcina: Obcine) => {
