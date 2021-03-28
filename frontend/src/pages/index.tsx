@@ -27,6 +27,7 @@ export default function Home() {
 					<Obcina obcina={Obcine.SelnicaObDravi} />
 					<Obcina obcina={Obcine.Starse} />
 					<Obcina obcina={Obcine.SvetaTrojica} />
+					<Obcina obcina={Obcine.SvetaAna} />
 				</div>
 			</div>
 		</>
