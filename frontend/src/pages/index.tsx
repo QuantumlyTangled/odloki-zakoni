@@ -29,6 +29,7 @@ export default function Home() {
 					<Obcina obcina={Obcine.SvetaTrojica} />
 					<Obcina obcina={Obcine.SvetaAna} />
 					<Obcina obcina={Obcine.SvetiJurijVSlovenskihGoricah} />
+					<Obcina obcina={Obcine.Sentilj} />
 				</div>
 			</div>
 		</>
