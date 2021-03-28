@@ -17,6 +17,7 @@ export default function Home() {
 					<Obcina obcina={Obcine.Cerkvenjak} />
 					<Obcina obcina={Obcine.Duplek} />
 					<Obcina obcina={Obcine.HoceSlivnica} />
+					<Obcina obcina={Obcine.Kungota} />
 				</div>
 			</div>
 		</>

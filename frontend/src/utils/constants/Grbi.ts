@@ -5,7 +5,8 @@ export enum Grbi {
 	Benedikt = 'benedikt.svg',
 	Cerkvenjak = 'cerkvenjak.svg',
 	Duplek = 'duplek.svg',
-	HoceSlivnica = 'hoce-slivnica.svg'
+	HoceSlivnica = 'hoce-slivnica.svg',
+	Kungota = 'kungota.svg'
 }
 
 export const computeGrb = (obcina: Obcine) => {
