@@ -17,7 +17,8 @@ export const getStaticProps = ({ params }: GetStaticPropsContext<{ id: string }>
 			obcina: params!.id,
 			// @ts-expect-error Magic
 			obcinaIme: Obcine[params!.id]
-		}
+		},
+		revalidate: 300
 	};
 };
 
