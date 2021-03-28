@@ -10,7 +10,8 @@ export enum Grbi {
 	Lenart = 'lenart.svg',
 	LovrencNaPohorju = 'lovrenc-na-pohorju.svg',
 	MiklavzNaDravskemPolju = 'miklavz-na-dravskem-polju.svg',
-	Pesnica = 'pesnica.svg'
+	Pesnica = 'pesnica.svg',
+	RaceFram = 'race-fram.svg'
 }
 
 export const computeGrb = (obcina: Obcine) => {
