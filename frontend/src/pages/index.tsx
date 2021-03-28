@@ -25,6 +25,7 @@ export default function Home() {
 					<Obcina obcina={Obcine.RaceFram} />
 					<Obcina obcina={Obcine.Ruse} />
 					<Obcina obcina={Obcine.SelnicaObDravi} />
+					<Obcina obcina={Obcine.Starse} />
 				</div>
 			</div>
 		</>
