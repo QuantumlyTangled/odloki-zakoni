@@ -16,5 +16,18 @@ export enum Obcine {
 	SvetaTrojica = 'Sveta Trojica',
 	SvetaAna = 'Sveta Ana',
 	SvetiJurijVSlovenskihGoricah = 'Sveti Jurij v Slovenskih goricah',
-	Sentilj = 'Šentilj'
+	Sentilj = 'Šentilj',
+
+	// Prosim naj mi nekdo oprosti za to grozoto
+	'Hoče-Slivnica' = 'HoceSlivnica',
+	'Lovrenc na Pohorju' = 'LovrencNaPohorju',
+	'Miklavž na Dravskem polju' = 'MiklavzNaDravskemPolju',
+	'Rače-Fram' = 'RaceFram',
+	'Ruše' = 'Ruse',
+	'Selnica ob Dravi' = 'SelnicaObDravi',
+	'Starše' = 'Starse',
+	'Sveta Trojica' = 'SvetaTrojica',
+	'Sveta Ana' = 'SvetaAna',
+	'Sveti Jurij v Slovenskih goricah' = 'SvetiJurijVSlovenskihGoricah',
+	'Šentilj' = 'Sentilj'
 }
