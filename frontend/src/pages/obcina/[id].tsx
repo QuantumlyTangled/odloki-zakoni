@@ -1,24 +1,67 @@
-import type { GetStaticPropsContext, GetStaticPropsResult, NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import React from 'react';
+import { Elementi } from 'utils/constants/Elementi';
 import { Obcine } from 'utils/constants/Obcine';
+
+export interface EleData {
+	href: string;
+	zst: number;
+	naslov: string;
+	st: string;
+}
 
 export interface ObcinaPageProps {
 	obcina: string;
 	obcinaIme: Obcine;
+	elementi: EleData[];
 }
 
-const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme }) => {
-	return <div>{obcinaIme}</div>;
+const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
+	return (
+		<>
+			<h1>{obcinaIme}</h1>
+			<div>
+				{elementi.map((ele) => (
+					<>
+						<a href={ele.href}>
+							<h2>
+								{ele.zst}. {ele.naslov}, {ele.st}
+							</h2>
+						</a>
+					</>
+				))}
+			</div>
+		</>
+	);
 };
 
-export const getStaticProps = ({ params }: GetStaticPropsContext<{ id: string }>): GetStaticPropsResult<ObcinaPageProps> => {
+// eslint-disable-next-line @typescript-eslint/require-await
+export const getStaticProps: GetStaticProps<ObcinaPageProps, { id: string }> = async ({ params }) => {
+	const elementi: EleData[] = Elementi.find((ele) => ele[0] === params!.id)![1]
+		.map((val) => new URL(val))
+		.map((val) => {
+			const partsUrl = val.pathname.split('/');
+			const partsEncoded = partsUrl[partsUrl.length - 1];
+			// Backblaze se enkrat enkodira url
+			const partsDecoded = decodeURIComponent(decodeURIComponent(partsEncoded));
+			const parts = partsDecoded.split(',');
+
+			return {
+				href: val.href,
+				zst: Number(parts[0]),
+				naslov: parts[1],
+				st: parts[2]
+			};
+		});
+
 	return {
 		props: {
 			obcina: params!.id,
 			// @ts-expect-error Magic
-			obcinaIme: Obcine[params!.id]
+			obcinaIme: Obcine[params!.id],
+			elementi
 		},
-		revalidate: 300
+		revalidate: 1
 	};
 };
 
