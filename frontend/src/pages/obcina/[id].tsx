@@ -13,46 +13,50 @@ export interface EleData {
 export interface ObcinaPageProps {
 	obcina: string;
 	obcinaIme: Obcine;
-	elementi: EleData[];
+	elementi: EleData[] | null;
 }
 
 const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
 	return (
 		<>
 			<h1>{obcinaIme}</h1>
-			<div>
-				{elementi.map((ele) => (
-					<>
-						<a href={ele.href}>
-							<h2>
-								{ele.zst}. {ele.naslov}, {ele.st}
-							</h2>
-						</a>
-					</>
-				))}
-			</div>
+			{elementi ? (
+				<div>
+					{elementi.map((ele) => (
+						<>
+							<a href={ele.href}>
+								<h2>
+									{ele.zst}. {ele.naslov}, {ele.st}
+								</h2>
+							</a>
+						</>
+					))}
+				</div>
+			) : null}
 		</>
 	);
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps<ObcinaPageProps, { id: string }> = async ({ params }) => {
-	const elementi: EleData[] = Elementi.find((ele) => ele[0] === params!.id)![1]
-		.map((val) => new URL(val))
-		.map((val) => {
-			const partsUrl = val.pathname.split('/');
-			const partsEncoded = partsUrl[partsUrl.length - 1];
-			// Backblaze se enkrat enkodira url
-			const partsDecoded = decodeURIComponent(decodeURIComponent(partsEncoded));
-			const parts = partsDecoded.split(',');
+	const elementi: EleData[] | null = Elementi.some((ele) => ele[0] === params!.id)
+		? Elementi.find((ele) => ele[0] === params!.id)![1]
+				.map((val) => new URL(val))
+				.map((val) => {
+					const partsUrl = val.pathname.split('/');
+					const partsEncoded = partsUrl[partsUrl.length - 1];
+					// Backblaze se enkrat enkodira url
+					const partsDecoded = decodeURIComponent(decodeURIComponent(partsEncoded));
+					const parts = partsDecoded.split(',');
 
-			return {
-				href: val.href,
-				zst: Number(parts[0]),
-				naslov: parts[1],
-				st: parts[2]
-			};
-		});
+					return {
+						href: val.href,
+						zst: Number(parts[0]),
+						naslov: parts[1],
+						st: parts[2]
+					};
+				})
+		: null;
 
 	return {
 		props: {
