@@ -1,4 +1,5 @@
 import React from 'react';
+import { Obcine } from 'utils/constants/Obcine';
 import Obcina from '../components/Obcina';
 
 export default function Home() {
@@ -11,9 +12,8 @@ export default function Home() {
 					<h2>Medobčinska inšpekcija</h2>
 				</div>
 				<div className="grid grid-cols-3">
-					<Obcina ime="Maribor" grb="maribor.svg" />
-					<Obcina ime="Maribor" />
-					<Obcina ime="Maribor" />
+					<Obcina obcina={Obcine.Maribor} />
+					<Obcina obcina={Obcine.Benedikt} />
 				</div>
 			</div>
 		</>
