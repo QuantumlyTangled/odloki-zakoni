@@ -5,7 +5,7 @@ import Obcina from './Obcina';
 const SeznamObcin: React.FC = () => {
 	return (
 		<>
-			<div className="grid grid-cols-3 gap-4">
+			<div className="grid md:grid-cols-3 sm:grid-cols-1 gap-4 p-4">
 				<Obcina obcina={Obcine.Maribor} />
 				<Obcina obcina={Obcine.Benedikt} />
 				<Obcina obcina={Obcine.Cerkvenjak} />
