@@ -15,13 +15,14 @@ const Obcina: React.FC<ObcinaProps> = ({ obcina }) => {
 			<div className="p-6 max-w-sm mx-auto bg-white dark:bg-dark-segment rounded-xl shadow-md flex items-center space-x-4 select-none cursor-pointer">
 				<div className="flex-shrink-0">
 					{grbLokacija ? (
-						<Image //
-							src={`/grbi/${grbLokacija}`}
-							alt={`Grb ${obcina}`}
-							width={32}
-							height={32}
-							className="h-12 w-12"
-						/>
+						<div className="h-12 w-12 relative">
+							<Image //
+								src={`/grbi/${grbLokacija}`}
+								alt={`Grb ${obcina}`}
+								layout="fill"
+								objectFit="contain"
+							/>
+						</div>
 					) : null}
 				</div>
 				<div>
