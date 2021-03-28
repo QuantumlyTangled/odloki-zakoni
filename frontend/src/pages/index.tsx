@@ -11,7 +11,7 @@ export default function Home() {
 					<br />
 					<h2>Medobčinska inšpekcija</h2>
 				</div>
-				<div className="grid grid-cols-3">
+				<div className="grid grid-cols-3 gap-4">
 					<Obcina obcina={Obcine.Maribor} />
 					<Obcina obcina={Obcine.Benedikt} />
 					<Obcina obcina={Obcine.Cerkvenjak} />
