@@ -6,9 +6,11 @@ module.exports = {
 			center: true
 		},
 		colors: {
-			dark: '#303030',
-			'dark-segment': '#272727',
-			'dark-text': '#ccc'
+			dark: {
+				segment: '#272727',
+				DEFAULT: '#303030',
+				text: '#ccc'
+			}
 		}
 	},
 	variants: {
