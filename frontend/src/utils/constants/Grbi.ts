@@ -12,6 +12,7 @@ export enum Grbi {
 	MiklavzNaDravskemPolju = 'miklavz-na-dravskem-polju.svg',
 	Pesnica = 'pesnica.svg',
 	RaceFram = 'race-fram.svg',
+	Ruse = 'ruse.svg',
 	SelnicaObDravi = 'selnica-ob-dravi.svg'
 }
 

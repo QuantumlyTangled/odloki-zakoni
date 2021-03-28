@@ -23,6 +23,7 @@ export default function Home() {
 					<Obcina obcina={Obcine.MiklavzNaDravskemPolju} />
 					<Obcina obcina={Obcine.Pesnica} />
 					<Obcina obcina={Obcine.RaceFram} />
+					<Obcina obcina={Obcine.Ruse} />
 					<Obcina obcina={Obcine.SelnicaObDravi} />
 				</div>
 			</div>
