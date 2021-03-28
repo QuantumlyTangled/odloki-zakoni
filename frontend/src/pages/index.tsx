@@ -14,6 +14,7 @@ export default function Home() {
 				<div className="grid grid-cols-3">
 					<Obcina obcina={Obcine.Maribor} />
 					<Obcina obcina={Obcine.Benedikt} />
+					<Obcina obcina={Obcine.Cerkvenjak} />
 				</div>
 			</div>
 		</>

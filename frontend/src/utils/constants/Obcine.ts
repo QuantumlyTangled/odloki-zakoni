@@ -1,7 +1,7 @@
 export enum Obcine {
 	Maribor = 'Maribor',
 	Benedikt = 'Benedikt',
-	Cerkvenjak = 'Cervenjak',
+	Cerkvenjak = 'Cerkvenjak',
 	Duplek = 'Duplek',
 	HoceSlivnica = 'Hoče-Slivnica',
 	Kungota = 'Kungota',
