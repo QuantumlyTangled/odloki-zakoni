@@ -21,17 +21,17 @@ const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
 		<>
 			<h1>{obcinaIme}</h1>
 			{elementi ? (
-				<div>
+				<>
 					{elementi.map((ele) => (
-						<>
+						<div key={ele.st}>
 							<a href={ele.href}>
 								<h2>
 									{ele.zst}. {ele.naslov}, {ele.st}
 								</h2>
 							</a>
-						</>
+						</div>
 					))}
-				</div>
+				</>
 			) : null}
 		</>
 	);
