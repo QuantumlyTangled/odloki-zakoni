@@ -7,9 +7,10 @@ module.exports = {
 		},
 		colors: {
 			dark: {
+				extra: '#574f4a',
 				segment: '#272727',
 				DEFAULT: '#303030',
-				text: '#ccc'
+				text: '#cccccc'
 			}
 		},
 		fontFamily: {

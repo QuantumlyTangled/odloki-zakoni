@@ -4,7 +4,7 @@ import React from 'react';
 const Navbar: React.FC = () => {
 	return (
 		<>
-			<div className="container mx-auto p-5 dark:text-dark-text">
+			<div className="container mx-auto p-5 bg-dark-extra dark:text-dark-text">
 				<nav className="flex justify-between">
 					<div>
 						<Link href="/">Odloki</Link>
