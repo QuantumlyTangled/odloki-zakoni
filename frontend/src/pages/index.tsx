@@ -7,7 +7,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin" />
+				<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin" />
 			</Head>
 			<Navbar />
 			<div className="container">
