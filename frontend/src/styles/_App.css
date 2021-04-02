@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply dark:bg-dark;
-    }
+	body {
+		@apply dark:bg-dark font-ubuntu;
+	}
 }

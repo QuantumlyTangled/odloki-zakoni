@@ -11,6 +11,9 @@ module.exports = {
 				DEFAULT: '#303030',
 				text: '#ccc'
 			}
+		},
+		fontFamily: {
+			ubuntu: ['Ubuntu']
 		}
 	},
 	variants: {
