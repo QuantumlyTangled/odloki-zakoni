@@ -52,7 +52,7 @@ export const getStaticProps: GetStaticProps<ObcinaPageProps, { id: string }> = a
 					return {
 						href: val.href,
 						zst: Number(parts[0]),
-						naslov: parts[1],
+						naslov: parts[1].replace(/.[^.]+$/, ''),
 						st: parts[2]
 					};
 				})
