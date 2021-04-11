@@ -7,7 +7,9 @@ import '../styles/_App.css';
 const App: NextPage<AppProps> = ({ Component, pageProps }) => {
 	return (
 		<>
-			<Navbar />
+			<header>
+				<Navbar />
+			</header>
 			<Component {...pageProps} />
 		</>
 	);
