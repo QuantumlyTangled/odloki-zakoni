@@ -50,8 +50,8 @@ export const getStaticProps: GetStaticProps<ObcinaPageProps, { id: string }> = a
 
 					return {
 						href: val.href,
-						naslov: parts[0].replace(/.[^.]+$/, ''),
-						st: parts[1]
+						naslov: parts[0],
+						st: parts[1].replace(/.[^.]+$/, '')
 					};
 				})
 		: null;
