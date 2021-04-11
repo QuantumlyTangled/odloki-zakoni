@@ -15,7 +15,7 @@ const Obcina: React.FC<ObcinaProps> = ({ obcina, fillColumn }) => {
 	return (
 		<>
 			<Link href={`/obcina/${Obcine[obcina]}`}>
-				<div
+				<article
 					className={`p-6 mx-auto bg-white dark:bg-dark-segment rounded-xl shadow-md flex items-center space-x-4 select-none cursor-pointer ${
 						fillColumn ? 'md:col-span-3 md:max-w-none' : 'max-w-sm'
 					}`}
@@ -35,7 +35,7 @@ const Obcina: React.FC<ObcinaProps> = ({ obcina, fillColumn }) => {
 					<div>
 						<div className="text-xl font-medium text-black dark:text-dark-text">{obcina}</div>
 					</div>
-				</div>
+				</article>
 			</Link>
 		</>
 	);
