@@ -16,8 +16,8 @@ const Obcina: React.FC<ObcinaProps> = ({ obcina, fillColumn }) => {
 		<>
 			<Link href={`/obcina/${Obcine[obcina]}`}>
 				<div
-					className={`p-6 max-w-sm mx-auto bg-white dark:bg-dark-segment rounded-xl shadow-md flex items-center space-x-4 select-none cursor-pointer ${
-						fillColumn ? 'md:col-span-3' : ''
+					className={`p-6 mx-auto bg-white dark:bg-dark-segment rounded-xl shadow-md flex items-center space-x-4 select-none cursor-pointer ${
+						fillColumn ? 'md:col-span-3 md:max-w-none' : 'max-w-sm'
 					}`}
 				>
 					<div className="flex-shrink-0">

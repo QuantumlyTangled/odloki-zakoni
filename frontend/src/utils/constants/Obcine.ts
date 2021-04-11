@@ -1,4 +1,5 @@
 export enum Obcine {
+	Skupno = 'Skupno',
 	Maribor = 'Maribor',
 	Benedikt = 'Benedikt',
 	Cerkvenjak = 'Cerkvenjak',
