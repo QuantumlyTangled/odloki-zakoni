@@ -1,5 +1,7 @@
 import Navbar from 'components/Navbar';
+import DefaultSeoProps from 'DefaultSeoProps';
 import type { NextPage } from 'next';
+import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
@@ -11,6 +13,8 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
 			<Head>
 				<meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
 			</Head>
+			<DefaultSeo {...DefaultSeoProps} />
+
 			<header>
 				<Navbar />
 			</header>
