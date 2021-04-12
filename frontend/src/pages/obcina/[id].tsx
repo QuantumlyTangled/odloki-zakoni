@@ -31,7 +31,7 @@ const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
 											className="flex flex-col w-full p-4 rounded-lg bg-white dark:bg-dark-segment"
 										>
 											<a href={ele.href}>
-												<div className="flex justify-between w-full space-x-4">
+												<div className="flex justify-between w-full space-x-4 text-black dark:text-dark-text">
 													<div className="font-bold leading-5 truncate w-full">
 														<span className="inline truncate">{ele.naslov}</span>
 													</div>
