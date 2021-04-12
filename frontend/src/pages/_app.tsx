@@ -12,6 +12,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
 		<>
 			<Head>
 				<meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
+				<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin" />
 			</Head>
 			<DefaultSeo {...DefaultSeoProps} />
 
