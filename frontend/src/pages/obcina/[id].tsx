@@ -22,12 +22,15 @@ const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
 			{elementi ? (
 				<>
 					<div className="grid">
-						<div className="flex-col flex-1 w-full">
+						<div className="flex-col flex-1 w-full p-5">
 							<div className="flex-col flex-1 mb-7">
 								<div className="flex-col space-y-4">
 									{elementi.map((ele) => (
-										<>
-											<a key={`${ele.naslov}-${ele.st}`} href={ele.href} className="flex flex-col w-full p-4 rounded-lg">
+										<article
+											key={`${ele.naslov}-${ele.st}`}
+											className="flex flex-col w-full p-4 rounded-lg bg-white dark:bg-dark-segment"
+										>
+											<a href={ele.href}>
 												<div className="flex justify-between w-full space-x-4">
 													<div className="font-bold leading-5 truncate w-full">
 														<span className="inline truncate">{ele.naslov}</span>
@@ -37,7 +40,7 @@ const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
 													</div>
 												</div>
 											</a>
-										</>
+										</article>
 									))}
 								</div>
 							</div>
