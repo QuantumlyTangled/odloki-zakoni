@@ -1,3 +1,4 @@
+import Element from 'components/Element';
 import type { GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import { Elementi } from 'utils/constants/Elementi';
@@ -26,21 +27,12 @@ const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
 							<div className="flex-col flex-1 mb-7">
 								<div className="flex-col">
 									{elementi.map((ele) => (
-										<article
+										<Element //
 											key={`${ele.naslov}-${ele.st}`}
-											className="flex flex-col w-full p-4 bg-white dark:bg-dark-segment border border-b-0 border-dark-extra dark:border-dark-text"
-										>
-											<a href={ele.href} target="_blank" rel="noreferrer">
-												<div className="flex justify-between w-full space-x-4 text-black dark:text-dark-text">
-													<div className="font-bold leading-5 truncate w-full">
-														<span className="inline truncate">{ele.naslov}</span>
-													</div>
-													<div className="flex-shrink-0">
-														<div className="font-bold items-center">{ele.st}</div>
-													</div>
-												</div>
-											</a>
-										</article>
+											href={ele.href}
+											naslov={ele.naslov}
+											st={ele.st}
+										/>
 									))}
 								</div>
 							</div>
