@@ -28,6 +28,7 @@ const Obcina: React.FC<ObcinaProps> = ({ obcina, fillColumn }) => {
 									alt={`Grb ${obcina}`}
 									layout="fill"
 									objectFit="contain"
+									loading="lazy"
 								/>
 							</div>
 						) : null}
