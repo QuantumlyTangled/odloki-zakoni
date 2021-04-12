@@ -1,4 +1,4 @@
-import Element from 'components/Element';
+import SeznamElementov from 'components/SeznamElementov';
 import type { GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import { Elementi } from 'utils/constants/Elementi';
@@ -25,16 +25,7 @@ const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
 					<div className="grid">
 						<div className="flex-col flex-1 w-full p-5">
 							<div className="flex-col flex-1 mb-7">
-								<div className="flex-col">
-									{elementi.map((ele) => (
-										<Element //
-											key={`${ele.naslov}-${ele.st}`}
-											href={ele.href}
-											naslov={ele.naslov}
-											st={ele.st}
-										/>
-									))}
-								</div>
+								<SeznamElementov naslov="test" elementi={elementi} />
 							</div>
 						</div>
 					</div>

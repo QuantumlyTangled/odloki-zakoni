@@ -9,7 +9,7 @@ export interface ElementProps {
 const Element: React.FC<ElementProps> = (ele) => {
 	return (
 		<>
-			<article className="flex flex-col w-full p-4 bg-white dark:bg-dark-segment border border-b-0 border-dark-extra dark:border-dark-text">
+			<article className="flex flex-col w-full p-4 bg-white dark:bg-dark-segment border border-dark-extra dark:border-dark-text">
 				<a href={ele.href} target="_blank" rel="noreferrer">
 					<div className="flex justify-between w-full space-x-4 text-black dark:text-dark-text">
 						<div className="font-bold leading-5 truncate w-full">
