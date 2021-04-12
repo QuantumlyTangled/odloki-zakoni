@@ -4,6 +4,10 @@ module.exports = {
 			{
 				source: '/index',
 				destination: '/'
+			},
+			{
+				source: '/zakonodaja',
+				destination: '/obcina/Zakonodaja'
 			}
 		];
 	},
