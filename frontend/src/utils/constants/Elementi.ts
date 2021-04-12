@@ -2,9 +2,11 @@ import { Obcine } from './Obcine';
 
 export const Elementi: Array<[Obcine, string[]]> = [
 	[
-		Obcine.Maribor,
+		Obcine.Skupno,
 		[
-			'https://f000.backblazeb2.com/file/odloki-zakoni/maribor/Odlok%2520o%2520na%25C4%258Dinu%2520opravljanja%2520obvezne%2520lokalne%2520gospodarske%2520javne%2520slu%25C5%25BEbe%2520ravnanja%2520s%2520komunalnimi%2520odpadki%2520v%2520mestni%2520ob%25C4%258Dini%2520Maribor%252C9%252F2020.pdf'
+			'https://f000.backblazeb2.com/file/odloki-zakoni/skupno/Zakon%2520o%2520splo%25C5%25A1nem%2520upravnem%2520postopku%2520(ZUP)%252C.pdf',
+			'https://f000.backblazeb2.com/file/odloki-zakoni/skupno/Zakon%2520o%2520prekr%25C5%25A1kih%2520(ZP-1)%252C.pdf',
+			'https://f000.backblazeb2.com/file/odloki-zakoni/skupno/Zakon%2520o%2520in%25C5%25A1pekcijskem%2520nadzoru%2520(ZIN)%252C.pdf'
 		]
 	]
 ];
