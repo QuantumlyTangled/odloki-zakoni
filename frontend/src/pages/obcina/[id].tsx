@@ -21,15 +21,28 @@ const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
 			<h1>{obcinaIme}</h1>
 			{elementi ? (
 				<>
-					{elementi.map((ele) => (
-						<div key={ele.st}>
-							<a href={ele.href}>
-								<h2>
-									{ele.naslov}, {ele.st}
-								</h2>
-							</a>
+					<div className="grid">
+						<div className="flex-col flex-1 w-full">
+							<div className="flex-col flex-1 mb-7">
+								<div className="flex-col space-y-4">
+									{elementi.map((ele) => (
+										<>
+											<a key={`${ele.naslov}-${ele.st}`} href={ele.href} className="flex flex-col w-full p-4 rounded-lg">
+												<div className="flex justify-between w-full space-x-4">
+													<div className="font-bold leading-5 truncate w-full">
+														<span className="inline truncate">{ele.naslov}</span>
+													</div>
+													<div className="flex-shrink-0">
+														<div className="font-bold items-center">{ele.st}</div>
+													</div>
+												</div>
+											</a>
+										</>
+									))}
+								</div>
+							</div>
 						</div>
-					))}
+					</div>
 				</>
 			) : null}
 		</>
