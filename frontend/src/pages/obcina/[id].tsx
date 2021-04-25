@@ -19,8 +19,10 @@ export interface ObcinaPageProps {
 
 const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
 	return (
-		<>
-			<h1>{obcinaIme}</h1>
+		<div className="container">
+			<div className="text-center dark:text-dark-text p-8">
+				<h1>{obcinaIme}</h1>
+			</div>
 			{elementi ? (
 				<div className="grid">
 					<div className="flex-col flex-1 w-full p-5">
@@ -50,7 +52,7 @@ const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
 					</div>
 				</div>
 			) : null}
-		</>
+		</div>
 	);
 };
 

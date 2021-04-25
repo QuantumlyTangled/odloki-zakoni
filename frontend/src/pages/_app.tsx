@@ -19,7 +19,9 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
 			<header>
 				<Navbar />
 			</header>
+			<div className="py-8" />
 			<Component {...pageProps} />
+			<div className="py-4" />
 		</>
 	);
 };
