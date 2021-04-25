@@ -136,6 +136,55 @@ export const AuthDisplayMagicLink: React.FC<AuthDisplayMagicLinkProps> = ({ auth
 	);
 };
 
+export interface AuthDisplayForgotPasswordProps {
+	authView: string;
+	setAuthView: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const AuthDisplayForgotPassword: React.FC<AuthDisplayForgotPasswordProps> = ({ authView, setAuthView }) => {
+	const supabase = useSupabase();
+	const [email, setEmail] = useState('');
+	const [error, setError] = useState('');
+	const [message, setMessage] = useState('');
+	const [loading, setLoading] = useState(false);
+
+	const handlePasswordReset = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		setError('');
+		setMessage('');
+		setLoading(true);
+		const { error } = await supabase.auth.api.resetPasswordForEmail(email);
+		if (error) setError(error.message);
+		else setMessage('Check your email for the password reset link');
+		setLoading(false);
+	};
+
+	useEffect(() => {
+		setEmail('');
+	}, [authView]);
+
+	return (
+		<form onSubmit={handlePasswordReset}>
+			<Space size={4} direction={'vertical'}>
+				<Space size={3} direction={'vertical'}>
+					<Input
+						label="Email address"
+						placeholder="Your email address"
+						icon={<IconMail size={21} stroke={'#666666'} />}
+						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+					/>
+					<Button block size="large" htmlType="submit" icon={<IconInbox size={21} />} loading={loading}>
+						Send reset password instructions
+					</Button>
+				</Space>
+				<Typography.Link onClick={() => setAuthView(VIEWS.SIGN_IN)}>Go back to sign in</Typography.Link>
+				{message && <Typography.Text>{message}</Typography.Text>}
+				{error && <Typography.Text type="danger">{error}</Typography.Text>}
+			</Space>
+		</form>
+	);
+};
+
 export interface AuthDisplayProps {
 	view: string;
 }
@@ -151,6 +200,9 @@ export const AuthDisplay: React.FC<AuthDisplayProps> = ({ view }) => {
 				</Case>
 				<Case condition={authView === VIEWS.MAGIC_LINK}>
 					<AuthDisplayMagicLink authView={authView} setAuthView={setAuthView} />
+				</Case>
+				<Case condition={authView === VIEWS.FORGOTTEN_PASSWORD}>
+					<AuthDisplayForgotPassword authView={authView} setAuthView={setAuthView} />
 				</Case>
 			</Switch>
 		</>
