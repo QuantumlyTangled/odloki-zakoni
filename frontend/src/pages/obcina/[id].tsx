@@ -22,35 +22,33 @@ const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
 		<>
 			<h1>{obcinaIme}</h1>
 			{elementi ? (
-				<>
-					<div className="grid">
-						<div className="flex-col flex-1 w-full p-5">
-							<div className="flex-col flex-1 mb-7">
-								<>
-									{elementi.map((ele) => {
-										if (Array.isArray(ele)) {
-											return (
-												<SeznamElementov //
-													key={`${ele[0]}`}
-													naslov={ele[0] as Kategorija}
-													elementi={ele[1] as EleData[]}
-												/>
-											);
-										}
+				<div className="grid">
+					<div className="flex-col flex-1 w-full p-5">
+						<div className="flex-col flex-1 mb-7">
+							<>
+								{elementi.map((ele) => {
+									if (Array.isArray(ele)) {
 										return (
-											<Element //
-												key={`${ele.naslov}-${ele.st}`}
-												href={ele.href}
-												naslov={ele.naslov}
-												st={ele.st}
+											<SeznamElementov //
+												key={`${ele[0]}`}
+												naslov={ele[0] as Kategorija}
+												elementi={ele[1] as EleData[]}
 											/>
 										);
-									})}
-								</>
-							</div>
+									}
+									return (
+										<Element //
+											key={`${ele.naslov}-${ele.st}`}
+											href={ele.href}
+											naslov={ele.naslov}
+											st={ele.st}
+										/>
+									);
+								})}
+							</>
 						</div>
 					</div>
-				</>
+				</div>
 			) : null}
 		</>
 	);
