@@ -913,5 +913,6 @@ frontend/src/.tsbuildinfo
 
 .next/
 sitemap.xml
+.env.local
 
 backend/target/**/*
