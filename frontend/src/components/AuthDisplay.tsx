@@ -51,14 +51,14 @@ export const AuthDisplayEmail: React.FC<AuthDisplayEmailProps> = ({ authView, se
 			<Space size={6} direction={'vertical'}>
 				<Space size={3} direction={'vertical'}>
 					<Input
-						label="Email address"
+						label="E-naslov"
 						autoComplete="email"
 						defaultValue={email}
 						icon={<IconMail size={21} stroke={'#666666'} />}
 						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
 					/>
 					<Input
-						label="Password"
+						label="Geslo"
 						type="password"
 						defaultValue={password}
 						autoComplete="current-password"
@@ -69,16 +69,16 @@ export const AuthDisplayEmail: React.FC<AuthDisplayEmailProps> = ({ authView, se
 				<Space direction="vertical" size={6}>
 					<Space style={{ justifyContent: 'space-between' }}>
 						{authView === VIEWS.SIGN_IN && (
-							<Typography.Link onClick={() => setAuthView(VIEWS.FORGOTTEN_PASSWORD)}>Forgot your password?</Typography.Link>
+							<Typography.Link onClick={() => setAuthView(VIEWS.FORGOTTEN_PASSWORD)}>Pozabili svoje geslo?</Typography.Link>
 						)}
 					</Space>
 					<Button htmlType="submit" type="primary" block size="large" icon={<IconLock size={21} />} loading={loading}>
-						{authView === VIEWS.SIGN_IN ? 'Sign in' : 'Sign up'}
+						Prijavite se
 					</Button>
 				</Space>
 				<Space direction="vertical" style={{ textAlign: 'center' }}>
 					{authView === VIEWS.SIGN_IN && (
-						<Typography.Link onClick={() => setAuthView(VIEWS.MAGIC_LINK)}>Sign in with magic link</Typography.Link>
+						<Typography.Link onClick={() => setAuthView(VIEWS.MAGIC_LINK)}>Prijavite se z magično povezavo</Typography.Link>
 					)}
 					{error && <Typography.Text type="danger">{error}</Typography.Text>}
 				</Space>
@@ -119,16 +119,16 @@ export const AuthDisplayMagicLink: React.FC<AuthDisplayMagicLinkProps> = ({ auth
 			<Space size={4} direction={'vertical'}>
 				<Space size={3} direction={'vertical'}>
 					<Input
-						label="Email address"
-						placeholder="Your email address"
+						label="E-naslov"
+						placeholder="Vaš e-naslov"
 						icon={<IconMail size={21} stroke={'#666666'} />}
 						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
 					/>
 					<Button block size="large" htmlType="submit" icon={<IconInbox size={21} />} loading={loading}>
-						Send magic link
+						Pošlji magično povezavo
 					</Button>
 				</Space>
-				<Typography.Link onClick={() => setAuthView(VIEWS.SIGN_IN)}>Sign in with password</Typography.Link>
+				<Typography.Link onClick={() => setAuthView(VIEWS.SIGN_IN)}>Prijavite se z geslom</Typography.Link>
 				{message && <Typography.Text>{message}</Typography.Text>}
 				{error && <Typography.Text type="danger">{error}</Typography.Text>}
 			</Space>
@@ -168,16 +168,16 @@ export const AuthDisplayForgotPassword: React.FC<AuthDisplayForgotPasswordProps>
 			<Space size={4} direction={'vertical'}>
 				<Space size={3} direction={'vertical'}>
 					<Input
-						label="Email address"
-						placeholder="Your email address"
+						label="E-naslov"
+						placeholder="Vaš e-naslov"
 						icon={<IconMail size={21} stroke={'#666666'} />}
 						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
 					/>
 					<Button block size="large" htmlType="submit" icon={<IconInbox size={21} />} loading={loading}>
-						Send reset password instructions
+						Pošlji povezavo z navodili
 					</Button>
 				</Space>
-				<Typography.Link onClick={() => setAuthView(VIEWS.SIGN_IN)}>Go back to sign in</Typography.Link>
+				<Typography.Link onClick={() => setAuthView(VIEWS.SIGN_IN)}>Pojdi nazaj na prijavo</Typography.Link>
 				{message && <Typography.Text>{message}</Typography.Text>}
 				{error && <Typography.Text type="danger">{error}</Typography.Text>}
 			</Space>

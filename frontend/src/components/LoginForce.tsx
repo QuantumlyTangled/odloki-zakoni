@@ -34,7 +34,7 @@ const LoginForce: React.FC = ({ children }) => {
 				<Then>
 					<div className="flex h-screen">
 						<div className="m-auto">
-							<Card>
+							<Card className="shadow-xl">
 								<AuthDisplay view={authView} />
 							</Card>
 						</div>
