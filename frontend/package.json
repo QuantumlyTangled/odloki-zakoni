@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev src -p 3000",
-		"prebuild": "yarn build:sitemap",
+    "prebuild": "yarn build:sitemap",
     "build": "next build src",
     "build:sitemap": "node scripts/sitemapGenerator.mjs",
     "clean": "rimraf src/.next src/public/sw.js src/public/workbox* src/public/sitemap.xml",
@@ -13,10 +13,16 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@headlessui/react": "^1.0.0",
+    "@supabase/supabase-js": "^1.11.7",
+    "@supabase/ui": "^0.24.1",
     "next": "10.0.9",
     "next-seo": "^4.23.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-if": "^4.0.1",
+    "swr": "^0.5.5",
+    "use-supabase": "^1.0.3"
   },
   "devDependencies": {
     "@sapphire/eslint-config": "^3.0.2",
