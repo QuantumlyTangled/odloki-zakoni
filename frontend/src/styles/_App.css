@@ -4,7 +4,7 @@
 
 @layer base {
 	body {
-		@apply dark:bg-dark font-ubuntu;
+		@apply bg-gray-100 dark:bg-dark font-ubuntu;
 	}
 }
 
