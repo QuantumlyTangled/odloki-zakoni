@@ -7,7 +7,7 @@ const LoginForce: React.FC = ({ children }) => {
 	const router = useRouter();
 
 	useEffect(() => {
-		if (!user) void router.replace('/login');
+		if (!user && router.asPath !== '/login') void router.replace('/login');
 	}, [router, user]);
 
 	return <>{children}</>;
