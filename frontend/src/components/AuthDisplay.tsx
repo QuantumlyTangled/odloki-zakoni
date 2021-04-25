@@ -1,4 +1,4 @@
-import { Button, IconKey, IconLock, IconMail, Input, Space, Typography } from '@supabase/ui';
+import { Button, IconInbox, IconKey, IconLock, IconMail, Input, Space, Typography } from '@supabase/ui';
 import React, { useEffect, useState } from 'react';
 import { Case, Switch } from 'react-if';
 import { useSupabase } from 'use-supabase';
@@ -87,6 +87,55 @@ export const AuthDisplayEmail: React.FC<AuthDisplayEmailProps> = ({ authView, se
 	);
 };
 
+export interface AuthDisplayMagicLinkProps {
+	authView: string;
+	setAuthView: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const AuthDisplayMagicLink: React.FC<AuthDisplayMagicLinkProps> = ({ authView, setAuthView }) => {
+	const supabase = useSupabase();
+	const [email, setEmail] = useState('');
+	const [error, setError] = useState('');
+	const [message, setMessage] = useState('');
+	const [loading, setLoading] = useState(false);
+
+	const handleMagicLinkSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		setError('');
+		setMessage('');
+		setLoading(true);
+		const { error } = await supabase.auth.signIn({ email });
+		if (error) setError(error.message);
+		else setMessage('Check your email for the magic link');
+		setLoading(false);
+	};
+
+	useEffect(() => {
+		setEmail('');
+	}, [authView]);
+
+	return (
+		<form onSubmit={handleMagicLinkSignIn}>
+			<Space size={4} direction={'vertical'}>
+				<Space size={3} direction={'vertical'}>
+					<Input
+						label="Email address"
+						placeholder="Your email address"
+						icon={<IconMail size={21} stroke={'#666666'} />}
+						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+					/>
+					<Button block size="large" htmlType="submit" icon={<IconInbox size={21} />} loading={loading}>
+						Send magic link
+					</Button>
+				</Space>
+				<Typography.Link onClick={() => setAuthView(VIEWS.SIGN_IN)}>Sign in with password</Typography.Link>
+				{message && <Typography.Text>{message}</Typography.Text>}
+				{error && <Typography.Text type="danger">{error}</Typography.Text>}
+			</Space>
+		</form>
+	);
+};
+
 export interface AuthDisplayProps {
 	view: string;
 }
@@ -99,6 +148,9 @@ export const AuthDisplay: React.FC<AuthDisplayProps> = ({ view }) => {
 			<Switch>
 				<Case condition={authView === VIEWS.SIGN_IN}>
 					<AuthDisplayEmail authView={authView} setAuthView={setAuthView} />
+				</Case>
+				<Case condition={authView === VIEWS.MAGIC_LINK}>
+					<AuthDisplayMagicLink authView={authView} setAuthView={setAuthView} />
 				</Case>
 			</Switch>
 		</>
