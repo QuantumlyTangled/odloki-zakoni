@@ -1,5 +1,6 @@
 import Element from 'components/Element';
 import SeznamElementov from 'components/SeznamElementov';
+import { getAllObcine } from 'core/obcine';
 import type { GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import { Elementi, Kategorija } from 'utils/constants/Elementi';
@@ -97,7 +98,7 @@ export const getStaticProps: GetStaticProps<ObcinaPageProps, { id: string }> = a
 };
 
 export const computeSeznamObcin = () => {
-	return Object.keys(Obcine).map((obcina) => ({
+	return getAllObcine().map((obcina) => ({
 		params: {
 			id: obcina
 		}
