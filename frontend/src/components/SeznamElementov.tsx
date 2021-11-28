@@ -25,10 +25,9 @@ const SeznamElementov: React.FC<SeznamElementovProps> = ({ elementi, naslov }) =
 				<>
 					{elementi.map((ele) => (
 						<Element //
-							key={`${ele.naslov}-${ele.st}`}
+							key={ele.naslov}
 							href={ele.href}
 							naslov={ele.naslov}
-							st={ele.st}
 						/>
 					))}
 				</>

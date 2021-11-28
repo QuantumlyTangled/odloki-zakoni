@@ -9,13 +9,12 @@ import { Obcine } from 'utils/constants/Obcine';
 export interface EleData {
 	href: string;
 	naslov: string;
-	st: string;
 }
 
 export interface ObcinaPageProps {
 	obcina: string;
 	obcinaIme: Obcine;
-	elementi: (EleData | (Kategorija | URL[] | EleData[])[])[] | null;
+	elementi: (EleData | (Kategorija | EleData[])[])[] | null;
 }
 
 const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
@@ -41,10 +40,9 @@ const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
 									}
 									return (
 										<Element //
-											key={`${ele.naslov}-${ele.st}`}
+											key={ele.naslov}
 											href={ele.href}
 											naslov={ele.naslov}
-											st={ele.st}
 										/>
 									);
 								})}
@@ -59,31 +57,12 @@ const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps<ObcinaPageProps, { id: string }> = async ({ params }) => {
-	const parseUrl = (url: URL): EleData => {
-		const partsUrl = url.pathname.split('/');
-		const partsEncoded = partsUrl[partsUrl.length - 1];
-		// Backblaze se enkrat enkodira url
-		const partsDecoded = decodeURIComponent(decodeURIComponent(partsEncoded));
-		const parts = partsDecoded.split(',');
-
-		return {
-			href: url.href,
-			naslov: parts[0],
-			st: parts[1].replace(/.[^.]+$/, '')
-		};
-	};
-
 	const elementi = Elementi.has(params?.id as Obcine)
-		? Elementi.get(params!.id as Obcine)!
-				.map((val: [kategorija: Kategorija, elementi: string[]] | string) =>
-					Array.isArray(val) ? [val[0], val[1].map((dVal) => new URL(dVal))] : new URL(val)
-				)
-				.map((val) => {
-					if (Array.isArray(val)) {
-						return [val[0], (val[1] as URL[]).map((ele) => parseUrl(ele))];
-					}
-					return parseUrl(val);
-				})
+		? Elementi.get(params!.id as Obcine)!.map((val: [kategorija: Kategorija, elementi: [string, string][]] | [string, string]) => {
+				return Array.isArray(val[1])
+					? [val[0] as Kategorija, val[1].map((inner) => ({ naslov: inner[0], href: inner[1] } as EleData))]
+					: ({ naslov: val[0], href: val[1] } as EleData);
+		  })
 		: null;
 
 	return {
