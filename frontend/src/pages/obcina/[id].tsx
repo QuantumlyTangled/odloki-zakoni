@@ -25,8 +25,8 @@ const ObcinaPage: NextPage<ObcinaPageProps> = ({ obcinaIme, elementi }) => {
 			</div>
 			{elementi ? (
 				<div className="grid">
-					<div className="flex-col flex-1 w-full p-5">
-						<div className="flex-col flex-1 mb-7">
+					<div className="flex-col flex-grow-0 flex-1 w-full p-5">
+						<div className="flex-col flex-grow-0 flex-1 mb-7">
 							<>
 								{elementi.map((ele) => {
 									if (Array.isArray(ele)) {

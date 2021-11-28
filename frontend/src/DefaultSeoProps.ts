@@ -48,8 +48,8 @@ export const DefaultSeoProps: DefaultSeoPropsType = {
 		description: 'Seznam odlokov in zakonov posameznih občin znotraj medobčinskega inšpektorata Maribor.'
 	},
 	twitter: {
-		handle: '@quantumlytngld',
-		site: '@quantumlytngld',
+		handle: '@quantumlyy',
+		site: '@quantumlyy',
 		cardType: 'summary'
 	}
 };

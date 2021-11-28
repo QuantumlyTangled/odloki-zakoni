@@ -8,11 +8,11 @@ export interface ElementProps {
 const Element: React.FC<ElementProps> = (ele) => {
 	return (
 		<>
-			<article className="flex flex-col w-full p-4 bg-white dark:bg-dark-segment border border-dark-extra dark:border-dark-text">
+			<article className="flex flex-wrap flex-grow-0 flex-col p-4 bg-white dark:bg-dark-segment border border-dark-extra dark:border-dark-text overflow-x-hidden">
 				<a href={ele.href} target="_blank" rel="noreferrer">
-					<div className="flex justify-between w-full space-x-4 text-black dark:text-dark-text">
-						<div className="font-bold leading-5 truncate w-full">
-							<span className="inline truncate">{ele.naslov}</span>
+					<div className="space-x-4 flex-grow-0 text-black dark:text-dark-text">
+						<div className="flex-grow-0 font-bold leading-5 truncate w-full">
+							<span className="inline truncate overflow-ellipsis">{ele.naslov}</span>
 						</div>
 					</div>
 				</a>

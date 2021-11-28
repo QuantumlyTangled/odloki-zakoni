@@ -3,7 +3,7 @@ import path from 'path';
 import { getAllObcine } from 'core/obcine';
 
 export async function generateSitemap(srcPath: string) {
-	const baseUrl = 'https://odloki.quantumly.dev';
+	const baseUrl = 'https://odloki.drobnic.me';
 
 	await sitemapGenerator({
 		baseUrl,
