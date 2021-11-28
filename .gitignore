@@ -912,6 +912,7 @@ FodyWeavers.xsd
 frontend/src/.tsbuildinfo
 
 .next/
+out/
 sitemap.xml
 .env.local
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { computeGrb } from 'utils/constants/Grbi';
 import { Obcine } from 'utils/constants/Obcine';
@@ -23,11 +22,9 @@ const Obcina: React.FC<ObcinaProps> = ({ obcina, fillColumn }) => {
 					<div className="flex-shrink-0">
 						{grbLokacija ? (
 							<div className="h-12 w-12 relative">
-								<Image //
+								<img //
 									src={`/grbi/${grbLokacija}`}
 									alt={`Grb ${obcina}`}
-									layout="fill"
-									objectFit="contain"
 									loading="lazy"
 								/>
 							</div>
