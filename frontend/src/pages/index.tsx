@@ -7,12 +7,8 @@ import React from 'react';
 const Index: NextPage = () => {
 	return (
 		<>
+			<div className="py-2" />
 			<div className="container">
-				<div className="text-center dark:text-dark-text p-8">
-					<h1>Skupna Občinska uprava Maribor</h1>
-					<br />
-					<h2>Medobčinska inšpekcija</h2>
-				</div>
 				<SeznamObcin />
 			</div>
 		</>

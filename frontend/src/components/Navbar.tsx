@@ -3,17 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Disclosure } from '@headlessui/react';
 import Link from 'next/link';
 import React from 'react';
-import NavbarItem from './NavbarItem';
+// import NavbarItem from './NavbarItem';
 
 // Based on https://tailwindui.com/components/application-ui/navigation/navbars
 const Navbar: React.FC = () => {
 	const linkStyle = '';
-	const navItemStyle = `px-3 py-2 rounded-md text-sm font-medium select-none cursor-pointer ${linkStyle}`;
-	const navItemMobileStyle = `block px-3 py-2 rounded-md text-base font-medium select-none cursor-pointer ${linkStyle}`;
+	// const navItemStyle = `px-3 py-2 rounded-md text-sm font-medium select-none cursor-pointer ${linkStyle}`;
+	// const navItemMobileStyle = `block px-3 py-2 rounded-md text-base font-medium select-none cursor-pointer ${linkStyle}`;
 
 	return (
 		<div className="w-full fixed z-50">
-			<Disclosure as="nav" className="mt-4 mx-4 rounded-lg shadow-xl bg-gray-400 text-white">
+			<Disclosure as="nav" className="bg-gray-400 text-white">
 				{({ open }) => (
 					<>
 						<div className="w-full mx-auto px-2 md:px-6 xl:px-8">
@@ -42,18 +42,18 @@ const Navbar: React.FC = () => {
 										</div> */}
 										<Link href="/">Odloki in Zakoni</Link>
 									</div>
-									<div className="hidden md:block md:ml-6">
+									{/* <div className="hidden md:block md:ml-6">
 										<div className="flex space-x-4 items-center">
 											<NavbarItem href="/" className={`${navItemStyle}`} content="Domov" />
 										</div>
-									</div>
+									</div> */}
 								</div>
 							</div>
 						</div>
 
 						<Disclosure.Panel className="md:hidden">
 							<div className="px-2 pt-2 pb-3 space-y-1 shadow-lg">
-								<NavbarItem href="/" className={`${navItemMobileStyle}`} content="Domov" />
+								{/* <NavbarItem href="/" className={`${navItemMobileStyle}`} content="Domov" /> */}
 							</div>
 						</Disclosure.Panel>
 					</>
