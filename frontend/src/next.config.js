@@ -10,8 +10,5 @@ module.exports = {
 				destination: '/obcina/Zakonodaja'
 			}
 		];
-	},
-    future: {
-        webpack5: true,
-    },
+	}
 }
