@@ -46,8 +46,8 @@ jobs:
         with:
           draft: false
           prerelease: false
-          release_name: ${{ steps.version.outputs.date }}
-          tag_name: ${{ steps.version.outputs.date }}
+          release_name: ${{ steps.date.outputs.date }}
+          tag_name: ${{ steps.date.outputs.date }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Upload static export
