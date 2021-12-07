@@ -5,7 +5,7 @@
 		"allowJs": true,
 		"checkJs": true,
 		"module": "ESNext",
-		"lib": ["ESNext", "DOM"],
+		"lib": ["ESNext"],
 		"declaration": false,
 		"declarationMap": false,
 		"isolatedModules": true,
@@ -15,21 +15,7 @@
 		"tsBuildInfoFile": "./.tsbuildinfo",
 		"baseUrl": ".",
 		"rootDir": ".",
-		/* "paths": {
-			"@config/*": ["config/*"],
-			"@contexts/*": ["contexts/*"],
-			"@assets/*": ["components/assets/*"],
-			// "@mods/*": ["components/mods/*"],
-			"@mui/*": ["components/material/*"],
-			"@next/*": ["components/next/*"],
-			// "@pages/*": ["components/pages/*"],
-			"@presentational/*": ["components/presentational/*"],
-			"@routing/*": ["components/routing/*"],
-			"@components/*": ["components/*"],
-			"@utils/*": ["utils/*"]
-		}, */
 		"skipLibCheck": true
 	},
-	"include": ["."],
-	"exclude": ["public/sw.js", "public/workbox*.js", ".next", "out"]
+	"include": ["."]
 }

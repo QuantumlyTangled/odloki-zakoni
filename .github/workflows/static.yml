@@ -34,12 +34,6 @@ jobs:
       - name: Install Dependencies if Cache Miss
         if: ${{ !steps.cache-restore.outputs.cache-hit }}
         run: yarn --frozen-lockfile
-      - name: Build NextJS site
-        run: yarn build
-      - name: Export NextJS site
-        run: yarn export
-      - name: Create static render artifact
-        run: yarn artifact:static:create
       - name: Create release
         uses: actions/create-release@v1
         id: create_release
@@ -50,15 +44,6 @@ jobs:
           tag_name: ${{ steps.date.outputs.date }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
-      - name: Upload static export
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./static.tar.gz
-          asset_name: static.tar.gz
-          asset_content_type: application/gzip
       - name: Create data export artifact
         run: yarn artifact:data:create
       - name: Upload JSON of exported data
@@ -69,5 +54,5 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./odloki-zakoni.json
           asset_name: odloki-zakoni.json
-          asset_content_type: 	application/json
+          asset_content_type: application/json
 
