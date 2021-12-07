@@ -38,8 +38,8 @@ jobs:
         run: yarn build
       - name: Export NextJS site
         run: yarn export
-      - name: Create artifact
-        run: yarn artifact:create
+      - name: Create static render artifact
+        run: yarn artifact:static:create
       - name: Create release
         uses: actions/create-release@v1
         id: create_release
@@ -59,4 +59,15 @@ jobs:
           asset_path: ./static.tar.gz
           asset_name: static.tar.gz
           asset_content_type: application/gzip
+      - name: Create data export artifact
+        run: yarn artifact:data:create
+      - name: Upload JSON of exported data
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./odloki-zakoni.json
+          asset_name: odloki-zakoni.json
+          asset_content_type: 	application/json
 

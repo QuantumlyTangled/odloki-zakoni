@@ -8,7 +8,8 @@
     "clean": "rimraf src/.next src/public/sw.js src/public/workbox* src/public/sitemap.xml",
     "start": "next start src",
     "export": "next export src",
-    "artifact:create": "tar -czvf static.tar.gz -C src/out/ ."
+    "artifact:static:create": "tar -czvf static.tar.gz -C src/out/ .",
+    "artifact:data:create": "ts-node scripts/export-records.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -45,6 +46,7 @@
     "rimraf": "^3.0.2",
     "tailwind-scrollbar": "^1.2.4",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "ts-node": "^10.4.0",
     "typescript": "^4.2.3"
   },
   "prettier": "@sapphire/prettier-config"
