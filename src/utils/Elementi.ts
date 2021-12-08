@@ -4,7 +4,7 @@ import { join } from 'path';
 export interface DocumentEntry {
 	name: string;
 	link: string;
-	category?: string;
+	category: string;
 }
 
 export interface MunicipalityDocuments {
@@ -24,7 +24,7 @@ export const Elementi: MunicipalityDocuments[] = (() => {
 
 	for (const entry of csvLineEntries) {
 		const municipality = elements.find((val) => val.name === entry[0]);
-		const documentEntry: DocumentEntry = { name: entry[4], link: entry[8], category: entry[1] === '' ? undefined : entry[1] };
+		const documentEntry: DocumentEntry = { name: entry[4], link: entry[8], category: entry[1] ?? 'Splošni dokumenti' };
 
 		if (municipality) {
 			municipality.elements.push(documentEntry);
