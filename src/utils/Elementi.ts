@@ -9,6 +9,7 @@ export interface DocumentEntry {
 
 export interface MunicipalityDocuments {
 	name: string;
+	slug: string;
 	elements: DocumentEntry[];
 }
 
@@ -24,7 +25,11 @@ export const Elementi: MunicipalityDocuments[] = (() => {
 
 	for (const entry of csvLineEntries) {
 		const municipality = elements.find((val) => val.name === entry[0]);
-		const documentEntry: DocumentEntry = { name: entry[4], link: entry[8], category: entry[1] ?? 'Splošni dokumenti' };
+		const documentEntry: DocumentEntry = {
+			name: entry[4],
+			link: entry[8],
+			category: entry[1] || 'Splošni dokumenti'
+		};
 
 		if (municipality) {
 			municipality.elements.push(documentEntry);
@@ -33,6 +38,11 @@ export const Elementi: MunicipalityDocuments[] = (() => {
 
 		elements.push({
 			name: entry[0],
+			slug: entry[0] //
+				.toLowerCase()
+				.normalize('NFD')
+				.replace(/\p{Diacritic}|\./gu, '')
+				.replace(/ /g, '-'),
 			elements: [documentEntry]
 		});
 	}
