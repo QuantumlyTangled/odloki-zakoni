@@ -24,10 +24,14 @@ export const Elementi: MunicipalityDocuments[] = (() => {
 	const csvLineEntries = csvLines.map((line) => line.split(','));
 
 	for (const entry of csvLineEntries) {
+		const link = entry[8];
+
+		if (!link) continue;
+
 		const municipality = elements.find((val) => val.name === entry[0]);
 		const documentEntry: DocumentEntry = {
 			name: entry[4],
-			link: entry[8],
+			link,
 			category: entry[1] || 'Splošni dokumenti'
 		};
 
